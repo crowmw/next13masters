@@ -8,7 +8,7 @@ const products: ProductListItemType[] = [
 		category: "Odzież",
 		price: 2999,
 		coverImage: {
-			src: "https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg",
+			src: "./product1.jpeg",
 			alt: "Koszulka",
 		},
 	},
@@ -18,7 +18,7 @@ const products: ProductListItemType[] = [
 		category: "Odzież",
 		price: 2922,
 		coverImage: {
-			src: "https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg",
+			src: "./product1.jpeg",
 			alt: "Koszulka",
 		},
 	},
@@ -28,7 +28,7 @@ const products: ProductListItemType[] = [
 		category: "Odzież",
 		price: 299,
 		coverImage: {
-			src: "https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg",
+			src: "./product1.jpeg",
 			alt: "Koszulka",
 		},
 	},
@@ -38,7 +38,7 @@ const products: ProductListItemType[] = [
 		category: "Akcesoria",
 		price: 2999,
 		coverImage: {
-			src: "https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg",
+			src: "./product1.jpeg",
 			alt: "Koszulka",
 		},
 	},
