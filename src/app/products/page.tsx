@@ -1,53 +1,37 @@
 import { ProductList } from "@/ui/organisms/ProductList";
-import { type ProductListItemType } from "@/types";
+import { type ProductApiResponseType, type ProductListItemType } from "@/types";
 
-const products: ProductListItemType[] = [
-	{
-		id: "1",
-		name: "Koszulka",
-		category: "Odzież",
-		price: 2999,
-		coverImage: {
-			src: "./product1.jpeg",
-			alt: "Koszulka",
-		},
-	},
-	{
-		id: "2",
-		name: "Koszulka",
-		category: "Odzież",
-		price: 2922,
-		coverImage: {
-			src: "./product1.jpeg",
-			alt: "Koszulka",
-		},
-	},
-	{
-		id: "3",
-		name: "Koszulka",
-		category: "Odzież",
-		price: 299,
-		coverImage: {
-			src: "./product1.jpeg",
-			alt: "Koszulka",
-		},
-	},
-	{
-		id: "4",
-		name: "Kubek",
-		category: "Akcesoria",
-		price: 2999,
-		coverImage: {
-			src: "./product1.jpeg",
-			alt: "Koszulka",
-		},
-	},
-];
+export function metadata() {
+	return {
+		title: "Products - NEXT13MASTERS",
+	};
+}
 
-export default function Home() {
-	return (
-		<section className="mx-auto max-w-4xl bg-slate-200">
-			<ProductList products={products} />
-		</section>
-	);
+export default async function Home() {
+	const products = await getProducts();
+
+	return <ProductList products={products} />;
+}
+
+async function getProducts() {
+	const res = await fetch("https://naszsklep-api.vercel.app/api/products?take=20");
+	const products = (await res.json()) as ProductApiResponseType[];
+
+	return mapProductsApiResponseTypeToProductsListItemType(products);
+}
+
+function mapProductsApiResponseTypeToProductsListItemType(
+	products: ProductApiResponseType[],
+): ProductListItemType[] {
+	return products.map((product) => ({
+		id: product.id,
+		name: product.title,
+		category: product.category,
+		price: product.price,
+		description: product.description,
+		coverImage: {
+			src: product.image,
+			alt: product.title,
+		},
+	}));
 }
