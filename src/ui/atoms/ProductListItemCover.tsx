@@ -4,7 +4,7 @@ export const ProductListItemCover = ({ src, alt }: { src: string; alt: string })
 			<img
 				width={300}
 				height={300}
-				className="oject-center h-full w-full object-cover"
+				className="h-full w-full object-cover object-center"
 				src={src}
 				alt={alt}
 			/>

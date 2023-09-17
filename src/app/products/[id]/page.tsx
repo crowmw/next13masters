@@ -18,6 +18,7 @@ export default async function ProductPage({ params: { id } }: { params: { id: st
 		<article className="mx-auto max-w-md">
 			<ProductListItemCover {...product.coverImage} />
 			<ProductListItemDescription product={product} />
+			<p className="mt-4 text-sm">{product.description}</p>
 		</article>
 	);
 }
