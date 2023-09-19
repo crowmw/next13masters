@@ -19,7 +19,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 							<ActiveLink href="/">Home</ActiveLink>
 						</li>
 						<li className="mr-8">
-							<ActiveLink href="/products">All</ActiveLink>
+							<ActiveLink href="/products" exact={false}>
+								All
+							</ActiveLink>
 						</li>
 					</ul>
 				</nav>

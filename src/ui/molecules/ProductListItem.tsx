@@ -6,7 +6,7 @@ import { ProductListItemDescription } from "@/ui/atoms/ProductListItemDescriptio
 export const ProductListItem = (product: ProductListItemType) => {
 	return (
 		<li>
-			<Link href={`/products/${product.id}`} prefetch={false}>
+			<Link href={`/product/${product.id}`} prefetch={false}>
 				<article className=" max-w-lg rounded-lg border border-gray-200 bg-white p-4 shadow ">
 					<ProductListItemCover {...product.coverImage} />
 					<ProductListItemDescription product={product} />
